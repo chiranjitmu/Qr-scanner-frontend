@@ -29,6 +29,11 @@ npm run dev
 
 Open the app in your web browser to experience the QR Scanner app.
 
+
+### Backend code
+
+[Backend](https://github.com/chiranjitmu/Qr-scanner-backend)
+
 ### Acknowledgments
 
 Thank you for exploring the QR Scanner App! If you have any feedback or suggestions, feel free to let me know.
