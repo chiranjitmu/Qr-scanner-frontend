@@ -8,10 +8,11 @@ function History() {
       const token = await localStorage.getItem("jwtToken");
       const email = await localStorage.getItem("email");
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_BASE_URI}/${email}`,{
+        `${import.meta.env.VITE_BACKEND_BASE_URI}/${email}`,
+        {
           headers: {
             "Content-Type": "application/json",
-            authorization: `Bearer ${token}`
+            authorization: `Bearer ${token}`,
           },
         }
       );
@@ -30,14 +31,14 @@ function History() {
 
   const handleDelete = async (id) => {
     try {
-      const token = await localStorage.getItem("jwtToken");
+      const token = localStorage.getItem("jwtToken");
       const response = await fetch(
         `${import.meta.env.VITE_BACKEND_BASE_URI}/api/v1/qrscanner/${id}`,
         {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
-            authorization: `Bearer ${token}`
+            authorization: `Bearer ${token}`,
           },
         }
       );

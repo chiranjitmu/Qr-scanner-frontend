@@ -5,7 +5,6 @@ const Qr = () => {
   const [data, setData] = useState("No Results");
   const [modal, setModal] = useState(false);
 
-
   useEffect(() => {
     if (data !== "No Results") {
       result();
@@ -17,8 +16,8 @@ const Qr = () => {
       const currentDate = new Date();
       const formattedDate = currentDate.toISOString();
       const formateddate = formattedDate.substring(0, 10);
-      const token = await localStorage.getItem("jwtToken");
-      const email = await localStorage.getItem("email");
+      const token = localStorage.getItem("jwtToken");
+      const email = localStorage.getItem("email");
       const response = await fetch(
         `${import.meta.env.VITE_BACKEND_BASE_URI}/api/v1/qrscanner/insert`,
         {
@@ -36,7 +35,7 @@ const Qr = () => {
       );
       const content = await response.json();
       if (content.message === "Data inserted successfully") {
-        console.log("Data inserted successfully");
+        alert("Data inserted successfully");
       }
     } catch (error) {
       console.error(error);
